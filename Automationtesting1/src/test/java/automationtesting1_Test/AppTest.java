@@ -1,4 +1,4 @@
-package Automationtesting1.Automationtesting1;
+package automationtesting1_Test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
