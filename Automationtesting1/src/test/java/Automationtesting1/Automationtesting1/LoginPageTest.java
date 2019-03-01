@@ -1,8 +1,8 @@
 package Automationtesting1.Automationtesting1;
 
-import org.junit.Test;
-import org.testng.annotations.BeforeMethod;
 
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import Com_Automationtesting1_ExcelUtil.ExlsReader;
 import Com_Automationtesting1_testbase.TestBase;
