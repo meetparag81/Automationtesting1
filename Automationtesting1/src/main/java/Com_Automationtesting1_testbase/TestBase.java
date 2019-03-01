@@ -14,6 +14,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import Com_Automationtesting1_TestUtil.TestUtil;
+import com_Automationtesting1_Helper.ResourceHelper;
 
 public class TestBase {
 	public static WebDriver driver;
@@ -27,7 +28,8 @@ public class TestBase {
 		try
 		{
 			prop = new Properties();
-			 ip = new FileInputStream("C:\\Parag\\Git\\IVFmilan\\src\\main\\java\\com_Milan_config\\config.proerties");
+			 ip = new FileInputStream(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
+			 System.out.println(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
 			try {
 				prop.load(ip);
 			} catch (IOException e) 
