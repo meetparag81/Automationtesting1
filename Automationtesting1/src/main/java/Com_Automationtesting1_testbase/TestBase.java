@@ -29,7 +29,7 @@ public class TestBase {
 		{
 			prop = new Properties();
 			 ip = new FileInputStream(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
-			 System.out.println(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
+			// System.out.println(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
 			try {
 				prop.load(ip);
 			} catch (IOException e) 
@@ -52,12 +52,12 @@ public class TestBase {
 		String browsername = prop.getProperty("browser");
 		if(browsername.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","C:\\Parag\\Paragdata30032018\\Parag\\Selenium\\Selenium Setup\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",ResourceHelper.getResourcePath("\\src\\main\\resources\\geckodriver.exe"));
 			driver = new FirefoxDriver();		
 		}	
 		else if(browsername.equals("chrome"))
 		 {
-			System.setProperty("webdriver.chrome.driver" ,"C:\\WorkingfolderPB\\softwares\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver" ,ResourceHelper.getResourcePath("\\src\\main\\resources\\chromedriver.exe"));
 			driver = new ChromeDriver();
 			
 		 }

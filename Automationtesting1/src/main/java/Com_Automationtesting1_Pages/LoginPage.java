@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Com_Automationtesting1_ExcelUtil.ExlsReader;
 import Com_Automationtesting1_testbase.TestBase;
+import com_Automationtesting1_Helper.ResourceHelper;
 
 
 
@@ -14,7 +15,7 @@ public class LoginPage extends TestBase
 	@FindBy (xpath="//input[@id='username']")WebElement user_name;
 	@FindBy (xpath="//input[@id='password']")WebElement password;
 	@FindBy(xpath="//input[@class='btn btn-default']")WebElement Login_Button; 
-	ExlsReader reader = new ExlsReader("C:\\WorkingfolderPB\\Java\\Automationtesting1\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx");
+	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 
 
 
