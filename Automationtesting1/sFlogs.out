@@ -1,0 +1,23 @@
+2019-03-03 20:03:512 INFO  LoggerHelper:30 - for test
+2019-03-03 20:03:190 INFO  LoggerHelper:31 - for test
+2019-03-03 20:03:194 INFO  LoggerHelper:32 - for test
+2019-03-03 20:03:194 INFO  LoggerHelper:33 - for test
+2019-03-03 20:03:486 INFO  LoggerHelper:31 - for test
+2019-03-03 20:03:489 INFO  LoggerHelper:32 - for test
+2019-03-03 20:03:490 INFO  LoggerHelper:33 - for test
+2019-03-03 21:03:320 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:969 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:425 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:791 INFO  TestBase:77 - element is not seen within 30 sec
+2019-03-03 21:03:353 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:581 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:803 INFO  TestBase:35 - property file initalized
+2019-03-03 21:03:637 INFO  TestBase:77 - element is not seen within 30 sec
+2019-03-03 22:03:615 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:374 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:685 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:855 INFO  TestBase:77 - element is not seen within 30 sec
+2019-03-03 22:03:859 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:65 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:441 INFO  TestBase:35 - property file initalized
+2019-03-03 22:03:881 INFO  TestBase:77 - element is not seen within 30 sec

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,19 +16,23 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import Com_Automationtesting1_TestUtil.TestUtil;
 import com_Automationtesting1_Helper.ResourceHelper;
+import com_Automationtesting1_Logger.LoggerHelper;
 
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static WebDriverEventListener e_driver;
+	private static Logger log = LoggerHelper.getLogger(TestBase.class);
 	
 	public TestBase()
 	{
+		
 		prop = new Properties();
 		FileInputStream ip;
 		try
 		{
 			prop = new Properties();
+			log.info("property file initalized");
 			 ip = new FileInputStream(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
 			// System.out.println(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
 			try {
@@ -35,13 +40,13 @@ public class TestBase {
 			} catch (IOException e) 
 			{
 				
-				System.out.println("IOException is seen");
+				log.info("I/O Exception seen.");
 			}
 		}
 		catch (FileNotFoundException e) 
 		{
 			
-			System.out.println("FileNotFoundException is seen");
+			log.info(" File not find Exception seen.");
 		}
 			
 		
@@ -74,7 +79,7 @@ public class TestBase {
 		}
 		catch(WebDriverException e)
 		{
-			System.out.println("Webdriver exception seen");
+			log.info("webdriver exception is seen");
 		}
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
@@ -85,7 +90,7 @@ public class TestBase {
 		}
 		catch(Exception e)
 		{
-			System.out.println("url is not entered");
+			log.info("url is not entered");
 			
 		}
 		
