@@ -6,12 +6,13 @@ import org.testng.annotations.Test;
 
 import Com_Automationtesting1_ExcelUtil.ExlsReader;
 import Com_Automationtesting1_testbase.TestBase;
- import Com_Automationtesting1_Pages.LoginPage;
+import com_Automationtesting1_Helper.ResourceHelper;
+import Com_Automationtesting1_Pages.LoginPage;
 
 public class LoginPageTest extends TestBase 
 {
 	LoginPage LoginPage;
-	ExlsReader reader = new ExlsReader("C:\\WorkingfolderPB\\Java\\Automationtesting1\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx");
+	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 	
 	
 	@BeforeMethod
