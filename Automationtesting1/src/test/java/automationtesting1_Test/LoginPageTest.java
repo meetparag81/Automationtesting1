@@ -35,9 +35,10 @@ public class LoginPageTest extends TestBase
 	@Test
 	public void EnterwithvalidUserNameTest()
 	{
-		String un = reader.getCellData("LoginPage", "UserName", 1);
-		String pass = reader.getCellData("LoginPage", "Password", 1);
+		String un = reader.getCellData("LoginPage", "UserName", 2);
+		String pass = reader.getCellData("LoginPage", "Password", 2);
 		LoginPage.EnterwithValidcredentials(un, pass);
+		log.info("username and paasword added");
 		String actual =LoginPage.UsernameOnHomePage();
 		String expected = reader.getCellData("LoginPage", "username", 2);
 		Assert.assertEquals(actual, expected);

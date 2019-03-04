@@ -44,6 +44,14 @@ public void EnterPassword(String password)
 }
 public void ClickOnLogin()
 {
+	try
+	{
+	TestUtil.VisibleOn(driver, Login_Button, 30);
+	}
+	catch(Exception e)
+	{
+		log.info("Login_Button is not seen within 30 sec");
+	}
 	Login_Button.click();
 }
 
@@ -56,6 +64,7 @@ public HomePage EnterwithValidcredentials(String Username, String Password)
 	if(Login_Button.isEnabled())
 	{
 	ClickOnLogin();
+	log.info("Loginbutton clicked");
 	}
 	else
 	{
