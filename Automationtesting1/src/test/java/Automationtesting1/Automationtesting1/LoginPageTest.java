@@ -5,9 +5,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Com_Automationtesting1_ExcelUtil.ExlsReader;
+import Com_Automationtesting1_Pages.LoginPage;
 import Com_Automationtesting1_testbase.TestBase;
 import com_Automationtesting1_Helper.ResourceHelper;
-import Com_Automationtesting1_Pages.LoginPage;
 
 public class LoginPageTest extends TestBase 
 {
