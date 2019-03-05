@@ -52,7 +52,24 @@ public void ClickOnLogin()
 	{
 		log.info("Login_Button is not seen within 30 sec");
 	}
-	Login_Button.click();
+	if(Login_Button.isEnabled()&&Login_Button.isDisplayed())
+	{
+		
+		try
+		{
+			TestUtil.ActionForMovetoElement(Login_Button);
+			TestUtil.ClickableElement(driver, Login_Button, 30).click();
+			//TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
+			
+			
+		}
+		catch(Exception e)
+		{
+			log.info("timeoutexceptionseen");
+		}
+	
+	log.info("Loginbutton clicked");
+	}
 }
 
 public HomePage EnterwithValidcredentials(String Username, String Password)
@@ -61,16 +78,8 @@ public HomePage EnterwithValidcredentials(String Username, String Password)
 	
 	EnterUserName(Username);
 	EnterPassword(Password);
-	if(Login_Button.isEnabled())
-	{
 	ClickOnLogin();
-	log.info("Loginbutton clicked");
-	}
-	else
-	{
-		System.out.println(("Login_Button is not enabled"));
-		
-	}
+
 	return new HomePage();
 	
 }

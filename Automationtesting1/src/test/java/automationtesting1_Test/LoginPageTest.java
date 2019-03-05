@@ -22,6 +22,10 @@ public class LoginPageTest extends TestBase
 	LoginPage LoginPage;
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 	private static Logger log = LoggerHelper.getLogger(TestBase.class);
+	public LoginPageTest()
+	{
+		super();
+	}
 	
 	@BeforeMethod
 	public void setup()
