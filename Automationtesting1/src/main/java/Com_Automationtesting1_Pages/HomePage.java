@@ -11,6 +11,7 @@ import com_Automationtesting1_Logger.LoggerHelper;
 
 public class HomePage extends TestBase
 {
+	@FindBy(xpath="//div[@class='surjUserPhotoName']")WebElement UserName;
 	@ FindBy(id="bizXSearchField-I")WebElement Search;
 	
 	
@@ -34,6 +35,20 @@ public class HomePage extends TestBase
 		TestUtil.ActionForMovetoElement(Search);
 		Search.sendKeys(input);
 		
+		
+	}
+	
+	public boolean HomepageTitle()
+	{
+		boolean flag = true;
+		if( UserName.getText()=="parag borawake ‎(bparag)‎")
+		{
+			return flag;	
+		}
+		else
+		{
+			return flag= false;
+		}
 		
 	}
 	

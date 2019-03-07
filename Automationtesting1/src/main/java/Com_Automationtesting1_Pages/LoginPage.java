@@ -12,6 +12,7 @@ import Com_Automationtesting1_TestUtil.TestUtil;
 import Com_Automationtesting1_testbase.TestBase;
 import com_Automationtesting1_Helper.ResourceHelper;
 import com_Automationtesting1_Logger.LoggerHelper;
+import helper.Frame.FrameHelper;
 
 
 
@@ -23,7 +24,7 @@ public class LoginPage extends TestBase
 	@FindBy(xpath="//button[@id='utilityLinksMenuId']")WebElement username;
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
     String msg;
-    private static Logger log = LoggerHelper.getLogger(TestBase.class);
+    private static Logger log = LoggerHelper.getLogger(LoginPage.class);
 
 
 public LoginPage()
@@ -42,7 +43,11 @@ public void EnterPassword(String password)
 {
 	this.password.sendKeys(password);
 }
-public void ClickOnLogin()
+
+
+
+
+public String  ClickOnLogin()
 {
 	try
 	{
@@ -57,8 +62,10 @@ public void ClickOnLogin()
 		
 		try
 		{
-			TestUtil.ActionForMovetoElement(Login_Button);
-			TestUtil.ClickableElement(driver, Login_Button, 30).click();
+			TestUtil.ActionForMovetoElement(Login_Button).click();
+			log.info("ClickOnLogin() method is passed");
+			return "true";
+			
 			//TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
 			
 			
@@ -66,21 +73,45 @@ public void ClickOnLogin()
 		catch(Exception e)
 		{
 			log.info("timeoutexceptionseen");
+			log.info("ClickOnLogin() method is failed");
+			return msg="false";
+			
 		}
-	
-	log.info("Loginbutton clicked");
+	}
+	return msg;
+
+}
+
+public HomePage ClickOnLoginButton()
+{
+	if(ClickOnLogin().equals("true"))
+	{
+		return new HomePage();
+	}
+	else
+	{
+		TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
+		return new HomePage();
 	}
 }
 
-public HomePage EnterwithValidcredentials(String Username, String Password)
+public int Frames()
+{
+	int size;
+	size= FrameHelper.NoofFrames();
+	return size;
+	
+}
+
+public void EnterwithValidcredentials(String Username, String Password)
 
 {
 	
 	EnterUserName(Username);
 	EnterPassword(Password);
-	ClickOnLogin();
 
-	return new HomePage();
+
+	
 	
 }
 

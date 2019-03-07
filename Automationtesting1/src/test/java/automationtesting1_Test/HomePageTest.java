@@ -18,6 +18,11 @@ public class HomePageTest extends TestBase
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 	private static Logger log = LoggerHelper.getLogger(TestBase.class);
 	
+	HomePageTest()
+	{
+		super();
+	}
+	
 	
 	@BeforeMethod
 	public void setup()
@@ -25,7 +30,17 @@ public class HomePageTest extends TestBase
 		TestBase.initalization();
 		LoginPage = new LoginPage();
 		
-		HomePage =LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
+		boolean flag= false;
+		 LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
+		 HomePage= LoginPage.ClickOnLoginButton();
+		if(HomePage.HomepageTitle()==true)
+		{
+			return; 
+		}
+		else
+		{
+			LoginPage.ClickOnLogin(); 
+		}
 	
 	}
 	

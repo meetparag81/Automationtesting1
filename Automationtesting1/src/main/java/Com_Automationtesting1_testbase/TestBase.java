@@ -58,12 +58,14 @@ public class TestBase {
 		if(browsername.equals("firefox"))
 		{
 			System.setProperty("webdriver.gecko.driver",ResourceHelper.getResourcePath("\\src\\main\\resources\\geckodriver.exe"));
-			driver = new FirefoxDriver();		
+			driver = new FirefoxDriver();
+			log.info("firefox browser launched");
 		}	
 		else if(browsername.equals("chrome"))
 		 {
 			System.setProperty("webdriver.chrome.driver" ,ResourceHelper.getResourcePath("\\src\\main\\resources\\chromedriver.exe"));
 			driver = new ChromeDriver();
+			log.info("chrome browser launched");
 			
 		 }
 		EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
@@ -76,6 +78,7 @@ public class TestBase {
 		try
 		{
 		driver.manage().window().maximize();
+		log.info("maximized the browser");
 		}
 		catch(WebDriverException e)
 		{
@@ -87,6 +90,7 @@ public class TestBase {
 		try
 		{
 		driver.get(prop.getProperty("url"));
+		log.info("url is entered");
 		}
 		catch(Exception e)
 		{

@@ -61,3 +61,74 @@
 2019-03-05 22:03:192 INFO  TestBase:35 - property file initalized
 2019-03-05 22:03:490 INFO  TestBase:35 - property file initalized
 2019-03-05 22:03:704 INFO  TestBase:68 - timeoutexceptionseen
+2019-03-07 19:03:317 INFO  TestBase:35 - property file initalized
+2019-03-07 19:03:826 INFO  TestBase:93 - url is not entered
+2019-03-07 19:03:839 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:754 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:319 INFO  TestBase:68 - chrome browser launched
+2019-03-07 20:03:479 INFO  TestBase:81 - maximized the browser
+2019-03-07 20:03:529 INFO  TestBase:93 - url is entered
+2019-03-07 20:03:539 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:383 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 20:03:161 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:51 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:716 INFO  TestBase:68 - chrome browser launched
+2019-03-07 20:03:868 INFO  TestBase:81 - maximized the browser
+2019-03-07 20:03:08 INFO  TestBase:93 - url is entered
+2019-03-07 20:03:12 INFO  TestBase:35 - property file initalized
+2019-03-07 20:03:767 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 20:03:769 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:91 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:116 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:283 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:506 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:532 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:72 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 21:03:85 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:189 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:817 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:05 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:502 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:521 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:297 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:668 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:884 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:982 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:153 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:214 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 21:03:128 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:801 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:90 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:472 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:696 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:604 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:816 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:109 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 21:03:386 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:94 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:349 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:542 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:725 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:727 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:268 INFO  TestBase:61 - ClickOnLogin() method is passed
+2019-03-07 21:03:271 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:763 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:518 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:664 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:876 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:882 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:243 INFO  TestBase:45 - username and paasword added
+2019-03-07 21:03:377 INFO  TestBase:119 - element is not seen within 30 sec
+2019-03-07 21:03:799 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:208 INFO  TestBase:68 - chrome browser launched
+2019-03-07 21:03:420 INFO  TestBase:81 - maximized the browser
+2019-03-07 21:03:156 INFO  TestBase:93 - url is entered
+2019-03-07 21:03:160 INFO  TestBase:35 - property file initalized
+2019-03-07 21:03:530 INFO  TestBase:45 - username and paasword added
+2019-03-07 22:03:688 INFO  LoginPage:119 - element is not seen within 30 sec
+2019-03-07 22:03:481 INFO  TestBase:35 - property file initalized
+2019-03-07 22:03:79 INFO  TestBase:68 - chrome browser launched
+2019-03-07 22:03:257 INFO  TestBase:81 - maximized the browser
+2019-03-07 22:03:605 INFO  TestBase:93 - url is entered
+2019-03-07 22:03:615 INFO  TestBase:35 - property file initalized
+2019-03-07 22:03:33 INFO  TestBase:45 - username and paasword added
