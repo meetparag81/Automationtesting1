@@ -35,6 +35,8 @@ public class HomePageTest extends TestBase
 	@Test(priority=1)
 	public void SearchtheResultTest()
 	{
+		HomePage.SearchTheResult(); 
+		
 		
 		
 		
