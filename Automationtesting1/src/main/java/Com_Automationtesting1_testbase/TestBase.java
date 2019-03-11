@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,32 +15,38 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import Com_Automationtesting1_TestUtil.TestUtil;
+import com_Automationtesting1_Helper.ResourceHelper;
+import com_Automationtesting1_Logger.LoggerHelper;
 
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static WebDriverEventListener e_driver;
+	private static Logger log = LoggerHelper.getLogger(TestBase.class);
 	
 	public TestBase()
 	{
+		
 		prop = new Properties();
 		FileInputStream ip;
 		try
 		{
 			prop = new Properties();
-			 ip = new FileInputStream("C:\\Parag\\Git\\IVFmilan\\src\\main\\java\\com_Milan_config\\config.proerties");
+			log.info("property file initalized");
+			 ip = new FileInputStream(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
+			// System.out.println(ResourceHelper.getResourcePath("\\src\\main\\resources\\com_Automationtesting1_config\\config.properties"));
 			try {
 				prop.load(ip);
 			} catch (IOException e) 
 			{
 				
-				System.out.println("IOException is seen");
+				log.info("I/O Exception seen.");
 			}
 		}
 		catch (FileNotFoundException e) 
 		{
 			
-			System.out.println("FileNotFoundException is seen");
+			log.info(" File not find Exception seen.");
 		}
 			
 		
@@ -50,13 +57,15 @@ public class TestBase {
 		String browsername = prop.getProperty("browser");
 		if(browsername.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","C:\\Parag\\Paragdata30032018\\Parag\\Selenium\\Selenium Setup\\geckodriver-v0.18.0-win64\\geckodriver.exe");
-			driver = new FirefoxDriver();		
+			System.setProperty("webdriver.gecko.driver",ResourceHelper.getResourcePath("\\src\\main\\resources\\geckodriver.exe"));
+			driver = new FirefoxDriver();
+			log.info("firefox browser launched");
 		}	
 		else if(browsername.equals("chrome"))
 		 {
-			System.setProperty("webdriver.chrome.driver" ,"C:\\WorkingfolderPB\\softwares\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver" ,ResourceHelper.getResourcePath("\\src\\main\\resources\\chromedriver.exe"));
 			driver = new ChromeDriver();
+			log.info("chrome browser launched");
 			
 		 }
 		EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
@@ -69,10 +78,11 @@ public class TestBase {
 		try
 		{
 		driver.manage().window().maximize();
+		log.info("maximized the browser");
 		}
 		catch(WebDriverException e)
 		{
-			System.out.println("Webdriver exception seen");
+			log.info("webdriver exception is seen");
 		}
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
@@ -80,10 +90,11 @@ public class TestBase {
 		try
 		{
 		driver.get(prop.getProperty("url"));
+		log.info("url is entered");
 		}
 		catch(Exception e)
 		{
-			System.out.println("url is not entered");
+			log.info("url is not entered");
 			
 		}
 		

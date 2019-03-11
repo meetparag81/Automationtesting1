@@ -3,17 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="Automationtesting1.Automationtesting1.LoginPageTest"/>
+      <class name="automationtesting1_Test.LoginPageTest"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="Automationtesting1.Automationtesting1.LoginPageTest">
+      <class name="automationtesting1_Test.LoginPageTest">
         <methods>
-          <include name="setup"/>
           <include name="EnterwithvalidUserNameTest"/>
+          <include name="setup"/>
+          <include name="Teardown"/>
         </methods>
-      </class> <!-- Automationtesting1.Automationtesting1.LoginPageTest -->
+      </class> <!-- automationtesting1_Test.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
