@@ -3,7 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="automationtesting1_Test.HomePageTest"/>
+      <class name="automationtesting1_Test.ScoreBoardPageTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="automationtesting1_Test.ScoreBoardPageTest">
+        <methods>
+          <include name="Setup"/>
+          <include name="ChangeTalentFlagsTest"/>
+        </methods>
+      </class> <!-- automationtesting1_Test.ScoreBoardPageTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

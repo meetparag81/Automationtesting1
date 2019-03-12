@@ -15,14 +15,16 @@ import Com_Automationtesting1_testbase.TestBase;
 import com_Automationtesting1_Helper.ResourceHelper;
 import com_Automationtesting1_Logger.LoggerHelper;
 
-public class HomePage extends TestBase {
+public class HomePage extends TestBase 
+{
 	@FindBy(xpath = "//div[@class='surjUserPhotoName']")
 	WebElement UserName;
 	@FindBy(id = "bizXSearchField-I")
 	WebElement Search;
 	@FindAll({ @FindBy(xpath = "//ul[@class='sapMSelectList sapMSuL']/li") }) List<WebElement> usernames;
 	@ FindBy(xpath="(//div[@class='fullName'])[2]")WebElement UserDisplayName;
-
+	@FindBy(xpath="//span/span[@class='sapMBtnContent']/bdi[text()='Scorecard']")WebElement Scoreboard;
+	@FindBy(xpath="//span[text()='Org Chart Fields/Talent Flags']")WebElement TalentFlag;
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 	int size;
 	private String msg ;
@@ -140,15 +142,21 @@ public class HomePage extends TestBase {
 	public void SearchTheResult() 
 	{
 
-		try {
+		try 
+		{
 			TestUtil.VisibleOn(driver, Search, 30);
-		} catch (TimeoutException e) {
+		} 
+		catch (TimeoutException e) 
+		{
 			log.info("Element- Search is not seen with in 30 sec");
 		}
-		if (HomepageTitle() == false) {
-			try {
+		if (HomepageTitle() == false)
+		{
+			try 
+			{
 				TestUtil.VisibleOn(driver, Search, 30);
-			} catch (TimeoutException e) {
+			} catch (TimeoutException e) 
+			{
 				log.info("Element- Search is not seen with in 10 sec");
 			}
 			TestUtil.ActionForMovetoElement(Search).click();
@@ -156,7 +164,45 @@ public class HomePage extends TestBase {
 			log.info("search input added");
 
 		}
+		
+		
 
 	}
+	
+	public ScoreBoardPage ClickONScoreBoadrd()
+	{
+		
+		try 
+		{
+			Thread.sleep(2000);
+		} catch (InterruptedException e) 
+		{
+			log.info("InterruptedException is seen");
+		}
+		TestUtil.ActionForMovetoElement(Scoreboard).click().build().perform();
+	
+		return new  ScoreBoardPage();
+				
+	}
+	public String ScoreBoardPageTile()
+	{
+		try 
+		{
+			Thread.sleep(2000);
+		}
+		catch (InterruptedException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		TestUtil.ActionForMovetoElement(TalentFlag);
+		msg= TalentFlag.getText();
+		
+		
+		return msg ;
+		
+	}
+	
+	
 
 }

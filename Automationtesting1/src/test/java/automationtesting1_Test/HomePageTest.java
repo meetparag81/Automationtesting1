@@ -58,6 +58,18 @@ public class HomePageTest extends TestBase
 		
 	}
 	
+	@Test(priority=3)
+	public void ScoreBoardPageTileTest()
+	{
+		HomePage.SearchAndClickTheUser();
+		HomePage.ClickONScoreBoadrd();
+	String Act=	HomePage.ScoreBoardPageTile();
+	String Exp = "Org Chart Fields/Talent Flags";
+	
+		log.info("ScoreBoardPageTileTest is completed");
+	
+	}
+	
 	
 	@AfterMethod
 	public void TearDown()
