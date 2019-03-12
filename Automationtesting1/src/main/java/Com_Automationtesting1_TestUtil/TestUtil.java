@@ -50,11 +50,13 @@ public class TestUtil extends TestBase
 		return new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 	
-	public static WebElement  ClickableElement(WebDriver driver,WebElement element,int timeout)
+	public static WebElement ElementIsClickable(WebDriver driver,WebElement element,int timeout)
 	{
 		return new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
+	
+	
 	
 	
 	public static void ScrollthePage(JavascriptExecutor js,WebDriver driver)

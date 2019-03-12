@@ -47,54 +47,46 @@ public void EnterPassword(String password)
 
 
 
-public String  ClickOnLogin()
+public HomePage  ClickOnLogin()
 {
 	try
 	{
-	TestUtil.VisibleOn(driver, Login_Button, 30);
+	TestUtil.ElementIsClickable(driver, Login_Button, 30);
 	}
 	catch(Exception e)
 	{
 		log.info("Login_Button is not seen within 30 sec");
 	}
-	if(Login_Button.isEnabled()&&Login_Button.isDisplayed())
+	if(Login_Button.isEnabled()&&Login_Button.isDisplayed()&&!Login_Button.isSelected())
 	{
-		
+		TestUtil.ActionForMovetoElement(Login_Button);
 		try
 		{
 			TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
-			TestUtil.ActionForMovetoElement(Login_Button).click();
-			log.info("ClickOnLogin() method is passed");
-			return "true";
-			
-			
-			
-			
+		
 		}
 		catch(Exception e)
 		{
 			log.info("timeoutexceptionseen");
-			log.info("ClickOnLogin() method is failed");
-			return msg="false";
-			
+		
 		}
-	}
-	return msg;
-
-}
-
-public HomePage ClickOnLoginButton()
-{
-	if(ClickOnLogin().equals("true"))
-	{
-		return new HomePage();
 	}
 	else
 	{
-		TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
-		return new HomePage();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) 
+		{
+			log.info(e.getStackTrace());
+			
+		}
+		
 	}
+	return new HomePage();
+
 }
+
+
 
 public int Frames()
 {

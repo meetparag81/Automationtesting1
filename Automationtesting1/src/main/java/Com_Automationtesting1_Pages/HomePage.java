@@ -1,10 +1,11 @@
 package Com_Automationtesting1_Pages;
 
-
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,71 +15,148 @@ import Com_Automationtesting1_testbase.TestBase;
 import com_Automationtesting1_Helper.ResourceHelper;
 import com_Automationtesting1_Logger.LoggerHelper;
 
-public class HomePage extends TestBase
-{
-	@FindBy(xpath="//div[@class='surjUserPhotoName']")WebElement UserName;
-	@ FindBy(id="bizXSearchField-I")WebElement Search;
-	
+public class HomePage extends TestBase {
+	@FindBy(xpath = "//div[@class='surjUserPhotoName']")
+	WebElement UserName;
+	@FindBy(id = "bizXSearchField-I")
+	WebElement Search;
+	@FindAll({ @FindBy(xpath = "//ul[@class='sapMSelectList sapMSuL']/li") }) List<WebElement> usernames;
+	@ FindBy(xpath="(//div[@class='fullName'])[2]")WebElement UserDisplayName;
+
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
+	int size;
+	private String msg ;
 	private static Logger log = LoggerHelper.getLogger(TestBase.class);
-	HomePage()
+
+	HomePage() 
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	public void GiveSearchInput(String input)
+
+	public int GiveSearchInput(String input) 
 	{
-		try
+		if (HomepageTitle() == true) 
 		{
-		TestUtil.VisibleOn(driver, Search, 30);
-		}
-		catch (Exception e) 
-		{
-		log.info("element Search is not seen within30 sec");
+		
+		try {
+			TestUtil.VisibleOn(driver, Search, 30);
+		} catch (Exception e) {
+			log.info("element Search is not seen within30 sec");
 		}
 		TestUtil.ActionForMovetoElement(Search);
-		Search.sendKeys(input);
-		
-		
-	}
-	
-	public boolean HomepageTitle()
-	{
-		boolean flag = true;
-		if( UserName.getText()=="parag borawake ‎(bparag)‎")
+		try
 		{
-			return flag;	
+			Thread.sleep(2000);
+		} 
+		catch (InterruptedException e) 
+		{
+			log.info("InterruptedException is seen");
+		}
+		Search.sendKeys(input);
+		size = usernames.size();
+
+		return size;
 		}
 		else
 		{
-			return flag= false;
+			try
+			{
+			TestUtil.VisibleOn(driver, Search, 10);
+		} 
+		catch(TimeoutException e) 
+		{
+			log.info("element Search is not seen another 10 sec");
 		}
-		
-	}
-
-
-	public void SearchTheResult() 
-	{
-	
+		TestUtil.ActionForMovetoElement(Search);
 		try
 		{
-			TestUtil.VisibleOn(driver, Search, 30);
+			Thread.sleep(2000);
+		} 
+		catch (InterruptedException e) 
+		{
+			log.info("InterruptedException is seen");
+		}
+		Search.sendKeys(input);
+		
+		size = usernames.size();
+			
+		}
+		;
+		return size;
+
+	}
+
+	public boolean HomepageTitle()
+	{
+		boolean flag = true;
+		try
+		{
+			TestUtil.VisibleOn(driver, UserDisplayName, 30);
 		}
 		catch(TimeoutException e)
 		{
-			log.info("Element- Search is not seen with in 30 sec");
+			log.info(e.getStackTrace());
 		}
-		
-		TestUtil.ActionForMovetoElement(Search).sendKeys(reader.getCellData(" Sarch", "SearchInput", 2));
-		log.info("search input added");
-		
-		
-	
-		
+		if (UserName.getText() == "parag borawake ‎(bparag)‎") 
+		{
+			return flag;
+		} else {
+			return flag = false;
+		}
+
 	}
 	
 	
-	
+	public String SearchAndClickTheUser()
+	{
+		GiveSearchInput(reader.getCellData("HomePage", "name", 2)); 
+		
+		for (WebElement user: usernames)
+		{
+			if(user.getText().equals(reader.getCellData("HomePage", "name", 2)));
+			{
+				TestUtil.ActionForMovetoElement(user).click().build().perform();
+				break;
+			}
+						
+		}
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e)
+		{
+			
+		}
+		TestUtil.ActionForMovetoElement(UserDisplayName);
+		msg= UserDisplayName.getText();
+		return msg;
+		
+		
+		
+		
+		
+		
+	}
+
+	public void SearchTheResult() 
+	{
+
+		try {
+			TestUtil.VisibleOn(driver, Search, 30);
+		} catch (TimeoutException e) {
+			log.info("Element- Search is not seen with in 30 sec");
+		}
+		if (HomepageTitle() == false) {
+			try {
+				TestUtil.VisibleOn(driver, Search, 30);
+			} catch (TimeoutException e) {
+				log.info("Element- Search is not seen with in 10 sec");
+			}
+			TestUtil.ActionForMovetoElement(Search).click();
+			TestUtil.ActionForMovetoElement(Search).sendKeys(reader.getCellData(" Sarch", "SearchInput", 2));
+			log.info("search input added");
+
+		}
+
+	}
 
 }

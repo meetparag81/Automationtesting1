@@ -1,6 +1,7 @@
 package Automationtesting1.Automationtesting1;
 
 import org.apache.log4j.Logger;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -28,7 +29,7 @@ public class HomePageTest extends TestBase
 		TestBase.initalization();
 		LoginPage = new LoginPage();
 		LoginPage.EnterwithValidcredentials(reader.getCellData("LoginPage", "UserName", 2), reader.getCellData("LoginPage", "Password", 2));
-		HomePage = LoginPage.ClickOnLoginButton();
+		HomePage = LoginPage.ClickOnLogin();
 	}
 	
 	
@@ -37,9 +38,13 @@ public class HomePageTest extends TestBase
 	{
 		HomePage.SearchTheResult(); 
 		
-		
-		
-		
 	}
+	
+	@ AfterMethod
+	public void TestDown()
+	{
+		driver.quit();
+	}
+	
 
 }
