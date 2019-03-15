@@ -22,12 +22,18 @@ public class ScoreBoardPage extends TestBase
 		PageFactory.initElements(driver, this);
 	}
 	
-	public String ChangeTalentFlagsPage()
+	public String ChangeTalentFlagsPageDialogTitle()
 	{
 		TestUtil.ActionForMovetoElement(EditButton).click().build().perform();
 		TestUtil.ActionForMovetoElement(TitleofTalentflagdialog);
 		
 		return msg=TitleofTalentflagdialog.getText();
+		
+	}
+
+	public void SelectDiffrentOptions() 
+	{
+		
 		
 	}
 	

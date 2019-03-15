@@ -6,14 +6,4 @@
       <class name="automationtesting1_Test.ScoreBoardPageTest"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="automationtesting1_Test.ScoreBoardPageTest">
-        <methods>
-          <include name="Setup"/>
-          <include name="ChangeTalentFlagsTest"/>
-        </methods>
-      </class> <!-- automationtesting1_Test.ScoreBoardPageTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

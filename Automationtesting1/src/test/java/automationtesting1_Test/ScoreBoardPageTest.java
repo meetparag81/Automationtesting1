@@ -1,6 +1,8 @@
 package automationtesting1_Test;
 
 import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -31,20 +33,32 @@ public class ScoreBoardPageTest extends TestBase
 		boolean flag= false;
 		 LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
 		 HomePage= LoginPage.ClickOnLogin();
-		 HomePage.GiveSearchInput(reader.getCellData("HomePage", "name", 2));
+		 HomePage.SearchAndClickTheUser();
 		 SBPage = HomePage.ClickONScoreBoadrd();
 	
 	}
 	
 	
 	@Test(priority=1)
-	 public void ChangeTalentFlagsTest()
+	 public void ChangeTalentFlagsPageDialogTitleTest()
 	 {
-		String Act= SBPage.ChangeTalentFlagsPage();
-		
-		
-		 
+		String Act= SBPage.ChangeTalentFlagsPageDialogTitle();
+		String Exp= "Org Chart Fields/Talent Flags";
+		Assert.assertEquals(Act, Exp);
+		log.info("ChangeTalentFlagsTest is completed");
 	 }
+	@Test(priority=2)
+	public void SelectDiffrentTalentOptionTest()
+	{
+		SBPage.SelectDiffrentOptions();
+		
+	}
+	
+	@AfterMethod
+	public void TearDown()
+	{
+		driver.quit();
+	}
 	
 	
 	

@@ -22,7 +22,7 @@ public class HomePage extends TestBase
 	@FindBy(id = "bizXSearchField-I")
 	WebElement Search;
 	@FindAll({ @FindBy(xpath = "//ul[@class='sapMSelectList sapMSuL']/li") }) List<WebElement> usernames;
-	@ FindBy(xpath="(//div[@class='fullName'])[2]")WebElement UserDisplayName;
+	@ FindBy(xpath="//div[@class='surjUserPhotoName']")WebElement UserDisplayName;
 	@FindBy(xpath="//span/span[@class='sapMBtnContent']/bdi[text()='Scorecard']")WebElement Scoreboard;
 	@FindBy(xpath="//span[text()='Org Chart Fields/Talent Flags']")WebElement TalentFlag;
 	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
