@@ -1,6 +1,8 @@
 package Com_Automationtesting1_Pages;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -22,6 +24,8 @@ public class ScoreBoardPage extends TestBase
 	@FindBy(xpath="//bdi[text()='Risk of Loss']//following::span[@tabindex=-1][1]")WebElement RisofLoss;
 	private String msg;
 	ExlsReader reader  = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
+	private String names;
+	private WebElement element;
 	private static Logger log = LoggerHelper.getLogger(ScoreBoardPage.class);
 	
 	
@@ -41,21 +45,125 @@ public class ScoreBoardPage extends TestBase
 		
 	}
 	
-	public void SaveAllOptions(WebElement RiskOfLossoptions,WebElement ImPactOFLossoptions, WebElement ReasonOfLeavingoptions )
+	public String SaveAllOptions(WebElement RiskOfLossoptions,WebElement ImPactOFLossoptions, WebElement ReasonOfLeavingoptions )
 	{
-		try
+		
+		int sum = 3;
+		while(sum>0)
 		{
-		TestUtil.VisibleOn(driver, RisofLoss, 20);
-		}
-		catch(TimeoutException e)
-		{
-			log.info("Element- RisofLoss is not seen with in 30 sec");
-		}
+			for(int i =0;i<=4;i++)
+			{
+				String names = RiskOfLossoptions();
+				
+				try
+				{
+				TestUtil.VisibleOn(driver, RisofLoss, 20);
+				}
+				catch(TimeoutException e)
+				{
+					log.info("Element- RisofLoss is not seen with in 30 sec");
+				}
+				switch(names)
+				{
+				case"Low":
+					TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
+					break;
+				case"Medium":
+					try
+					{
+					TestUtil.VisibleOn(driver, RisofLoss, 20);
+					}
+					catch(TimeoutException e)
+					{
+						log.info("Element- RisofLoss is not seen with in 30 sec");
+					}
+					TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
+					break;
+					}
+				
+				TestUtil.ActionForMovetoElement(ReasonOfLeavingoptions);
+				
+				
+					
+					
+				}
+				
+			
+			}
+		
+		
+		
+		
+		
 		TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
-		TestUtil.ActionForMovetoElement(ImPactOFLossoptions).click().build().perform();
-		TestUtil.ActionForMovetoElement(ReasonOfLeavingoptions).click().build().perform();
+		TestUtil.ActionForMovetoElement(element);
+		return msg;
 		
 	}
+	public String RiskOfLossoptions()
+	
+	{
+		for(int i =0;i<=4;i++)
+		{
+			
+			boolean flag= false;
+			int count = 0;
+			List<WebElement> Lossoptions = driver.findElements(By.xpath("//ul[@role='listbox']/li"));
+			 names = Lossoptions.get(i).getText();
+			count++;
+			if(count<0)
+			{
+			flag= true;	
+			}
+			
+		}
+		
+		return names;
+		
+	}
+	
+	public WebElement RiskOfLossoptionsElement()
+	{
+		for(int i =0;i<=4;i++)
+		{
+			
+			boolean flag= false;
+			int count = 0;
+			List<WebElement> Lossoptions = driver.findElements(By.xpath("//ul[@role='listbox']/li"));
+			  element = Lossoptions.get(i);
+			count++;
+			if(count<0)
+			{
+			flag= true;	
+			}
+		
+		}
+		return element;
+		
+	}
+	
+public String ImPactOFLossoptions()
+	
+	{
+		for(int i =0;i<=4;i++)
+		{
+			
+			boolean flag= false;
+			int count = 0;
+			List<WebElement> Lossoptions = driver.findElements(By.xpath("//ul[@role='listbox']/li"));
+			 names = Lossoptions.get(i).getText();
+			count++;
+			if(count<0)
+			{
+			flag= true;	
+			}
+			
+		}
+		
+		return names;
+		
+	}
+		
 
 	public  ArrayList<Object[]> GetDiffrentOptions() 
 	{
@@ -72,6 +180,7 @@ public class ScoreBoardPage extends TestBase
 		int count = reader.getRowCount("ScoreBoardPage");
 		for(int i= 2; i<=count;i++)
 		{
+			
 			WebElement RiskOfLossoptions = driver.findElement(By.xpath("//ul[@role='listbox']/li[" + i + "]"));
 			WebElement ImPactOFLossoptions = driver.findElement(By.xpath("//ul[@role='listbox'])[2]/li[" + i + "]"));
 			WebElement ReasonOfLeavingoptions = driver.findElement(By.xpath("(//ul[@role='listbox'])[2]/li[" + i + "] "));

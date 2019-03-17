@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -41,10 +42,18 @@ public class ScoreBoardPageTest extends TestBase
 	}
 	
 	
-	@Test(priority=1)
+	@Test(priority=1,groups = {"Smoke" })
 	 public void ChangeTalentFlagsTest()
 	 {
 		String Act= SBPage.ChangeTalentFlagsPageDialogTitle();
+	 
+	 }
+	
+	@Test(priority=2,groups = {"functional" },dataProvider= "getTestData",enabled= true)
+	 public void SaveChangeTalentFlagsTest(WebElement RoLp,WebElement IoLp,WebElement RoLo)
+	 
+	 {
+		String Act= SBPage.SaveAllOptions(RoLp, IoLp, RoLo);
 	 
 	 }
 	
