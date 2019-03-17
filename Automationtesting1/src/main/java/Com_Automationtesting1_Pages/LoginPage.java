@@ -68,18 +68,13 @@ public HomePage  ClickOnLogin()
 		catch(Exception e)
 		{
 			log.info("timeoutexceptionseen");
+			
 		
 		}
 	}
 	else
 	{
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) 
-		{
-			log.info(e.getStackTrace());
-			
-		}
+		TestUtil.ClickEmementByJavaScriptExecutor(Login_Button);
 		
 	}
 	return new HomePage();
@@ -103,9 +98,6 @@ public void EnterwithValidcredentials(String Username, String Password)
 	EnterUserName(Username);
 	EnterPassword(Password);
 
-
-	
-	
 }
 
 public String UsernameOnHomePage() 

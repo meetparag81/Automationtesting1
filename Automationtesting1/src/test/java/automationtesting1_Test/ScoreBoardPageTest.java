@@ -1,7 +1,11 @@
 package automationtesting1_Test;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Com_Automationtesting1_ExcelUtil.ExlsReader;
@@ -40,11 +44,19 @@ public class ScoreBoardPageTest extends TestBase
 	@Test(priority=1)
 	 public void ChangeTalentFlagsTest()
 	 {
-		String Act= SBPage.ChangeTalentFlagsPage();
-		
-		
-		 
+		String Act= SBPage.ChangeTalentFlagsPageDialogTitle();
+	 
 	 }
+	
+	@DataProvider
+	public  Iterator<Object[]> getTestData()
+	{
+		ArrayList<Object[]>	ChangeTalentFlags=	SBPage.GetDiffrentOptions();
+		
+		
+		return ChangeTalentFlags.iterator();
+		
+	}
 	
 	
 	

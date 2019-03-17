@@ -683,3 +683,46 @@
 2019-03-12 17:03:330 INFO  TestBase:93 - url is entered
 2019-03-12 17:03:334 INFO  TestBase:35 - property file initalized
 2019-03-12 17:03:213 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:574 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:307 INFO  TestBase:68 - chrome browser launched
+2019-03-13 22:03:585 INFO  TestBase:81 - maximized the browser
+2019-03-13 22:03:707 INFO  TestBase:97 - url is not entered
+2019-03-13 22:03:709 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:229 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:849 INFO  TestBase:68 - chrome browser launched
+2019-03-13 22:03:994 INFO  TestBase:81 - maximized the browser
+2019-03-13 22:03:506 INFO  TestBase:93 - url is entered
+2019-03-13 22:03:508 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:300 INFO  LoginPage:70 - timeoutexceptionseen
+2019-03-13 22:03:302 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:587 INFO  TestBase:100 - [Ljava.lang.StackTraceElement;@38be305c
+2019-03-13 22:03:526 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:96 INFO  TestBase:68 - chrome browser launched
+2019-03-13 22:03:286 INFO  TestBase:81 - maximized the browser
+2019-03-13 22:03:968 INFO  TestBase:93 - url is entered
+2019-03-13 22:03:972 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:561 INFO  LoginPage:70 - timeoutexceptionseen
+2019-03-13 22:03:564 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:826 INFO  TestBase:100 - [Ljava.lang.StackTraceElement;@38be305c
+2019-03-13 22:03:435 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:951 INFO  TestBase:68 - chrome browser launched
+2019-03-13 22:03:98 INFO  TestBase:81 - maximized the browser
+2019-03-13 22:03:626 INFO  TestBase:93 - url is entered
+2019-03-13 22:03:630 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:196 INFO  LoginPage:70 - timeoutexceptionseen
+2019-03-13 22:03:618 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:372 INFO  TestBase:68 - chrome browser launched
+2019-03-13 22:03:529 INFO  TestBase:81 - maximized the browser
+2019-03-13 22:03:727 INFO  TestBase:93 - url is entered
+2019-03-13 22:03:731 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:389 INFO  LoginPage:70 - timeoutexceptionseen
+2019-03-13 22:03:397 INFO  TestBase:35 - property file initalized
+2019-03-13 22:03:641 INFO  TestBase:100 - [Ljava.lang.StackTraceElement;@38be305c
+2019-03-14 20:03:374 INFO  TestBase:35 - property file initalized
+2019-03-14 20:03:35 INFO  TestBase:68 - chrome browser launched
+2019-03-14 20:03:268 INFO  TestBase:81 - maximized the browser
+2019-03-14 20:03:334 INFO  TestBase:93 - url is entered
+2019-03-14 20:03:534 INFO  TestBase:35 - property file initalized
+2019-03-14 20:03:990 INFO  LoginPage:70 - timeoutexceptionseen
+2019-03-14 20:03:05 INFO  TestBase:35 - property file initalized
+2019-03-14 20:03:227 INFO  TestBase:100 - [Ljava.lang.StackTraceElement;@38be305c
