@@ -32,9 +32,8 @@ public class ScoreBoardPageTest extends TestBase
 	{
 		TestBase.initalization();
 		LoginPage = new LoginPage();
-		
-		boolean flag= false;
-		 LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
+		log.info("Loginpage object created");
+		LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
 		 HomePage= LoginPage.ClickOnLogin();
 		 HomePage.GiveSearchInput(reader.getCellData("HomePage", "name", 2));
 		 SBPage = HomePage.ClickONScoreBoadrd();
@@ -49,21 +48,22 @@ public class ScoreBoardPageTest extends TestBase
 	 
 	 }
 	
-	@Test(priority=2,groups = {"functional" },dataProvider= "getTestData",enabled= true)
+	@Test(priority=2,groups = {"functional" },dataProvider= "getTestData",enabled= false)
 	 public void SaveChangeTalentFlagsTest(WebElement RoLp,WebElement IoLp,WebElement RoLo)
 	 
 	 {
+		System.out.println();
 		String Act= SBPage.SaveAllOptions(RoLp, IoLp, RoLo);
 	 
 	 }
 	
 	@DataProvider
-	public  Iterator<Object[]> getTestData()
+	public  void getTestData(WebElement RiskOfLossoptions, WebElement ImPactOFLossoptions, WebElement ReasonOfLeavingoptions)
 	{
-		ArrayList<Object[]>	ChangeTalentFlags=	SBPage.GetDiffrentOptions();
+		String	ChangeTalentFlags=	SBPage.SaveAllOptions(RiskOfLossoptions, ImPactOFLossoptions, ReasonOfLeavingoptions);
 		
 		
-		return ChangeTalentFlags.iterator();
+		
 		
 	}
 	

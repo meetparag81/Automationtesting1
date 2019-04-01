@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -68,13 +69,13 @@ public class TestBase {
 			log.info("chrome browser launched");
 			
 		 }
-		EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
-		// Now create object of EventListerHandler to register it with EventFiringWebDriver
+		/*EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
+		 Nowcreate object of EventListerHandler to register it with EventFiringWebDriver
 			//WebDriverEventListener eventListener =  new TestNGListners();
 			//e_driver.register(eventListener);
 			driver = e_driver;			
-		//e_driver.register(eventListener);
-		driver = e_driver;
+		e_driver.register(eventListener);
+		driver = e_driver;*/
 		try
 		{
 		driver.manage().window().maximize();
@@ -89,12 +90,25 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		try
 		{
-		driver.get(prop.getProperty("url"));
+			String URL = prop.getProperty("url");
+		driver.get("https://performancemanager8.successfactors.com/login?company=BPOCUSTOM10");
 		log.info("url is entered");
+		if(!driver.getTitle().equals("SuccessFactors"))
+		{
+			driver.get("https://performancemanager8.successfactors.com/login?company=BPOCUSTOM10");
+		}
 		}
 		catch(Exception e)
 		{
 			log.info("url is not entered");
+			if(!driver.getTitle().equals(""))
+			{
+				driver.get("https://performancemanager8.successfactors.com");
+				driver.findElement(By.id("__input0-inner")).sendKeys("BPOCUSTOM10");
+				driver.findElement(By.id("__button0-img")).click();
+				
+			}
+			
 			
 		}
 		

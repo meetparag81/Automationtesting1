@@ -21,13 +21,18 @@ public class HomePage extends TestBase
 	WebElement UserName;
 	@FindBy(id = "bizXSearchField-I")
 	WebElement Search;
-	@FindAll({ @FindBy(xpath = "//ul[@class='sapMSelectList sapMSuL']/li") }) List<WebElement> usernames;
-	@ FindBy(xpath="(//div[@class='fullName'])[2]")WebElement UserDisplayName;
-	@FindBy(xpath="//span/span[@class='sapMBtnContent']/bdi[text()='Scorecard']")WebElement Scoreboard;
-	@FindBy(xpath="//span[text()='Org Chart Fields/Talent Flags']")WebElement TalentFlag;
-	ExlsReader reader = new ExlsReader(ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
+	@FindAll({ @FindBy(xpath = "//ul[@class='sapMSelectList sapMSuL']/li") })
+	List<WebElement> usernames;
+	@FindBy(xpath = "(//div[@class='fullName'])[2]")
+	WebElement UserDisplayName;
+	@FindBy(xpath = "//span/span[@class='sapMBtnContent']/bdi[text()='Scorecard']")
+	WebElement Scoreboard;
+	@FindBy(xpath = "//span[text()='Org Chart Fields/Talent Flags']")
+	WebElement TalentFlag;
+	ExlsReader reader = new ExlsReader(
+			ResourceHelper.getResourcePath("\\src\\main\\java\\Com_Automationtesting1_TestData\\TestData.xlsx"));
 	int size;
-	private String msg ;
+	private String msg;
 	private static Logger log = LoggerHelper.getLogger(TestBase.class);
 
 	HomePage() 
@@ -37,17 +42,18 @@ public class HomePage extends TestBase
 
 	public int GiveSearchInput(String input) 
 	{
-		if (HomepageTitle() == true) 
-		{
 		
 		try {
-			TestUtil.VisibleOn(driver, Search, 30);
-		} catch (Exception e) {
-			log.info("element Search is not seen within30 sec");
-		}
-		TestUtil.ActionForMovetoElement(Search);
-		try
+			Thread.sleep(5000);
+		} 
+		catch (InterruptedException e1) 
 		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		TestUtil.ActionForMovetoElement(Search);
+		try {
 			Thread.sleep(2000);
 		} 
 		catch (InterruptedException e) 
@@ -58,57 +64,8 @@ public class HomePage extends TestBase
 		size = usernames.size();
 
 		return size;
-		}
-		else
-		{
-			try
-			{
-			TestUtil.VisibleOn(driver, Search, 10);
-		} 
-		catch(TimeoutException e) 
-		{
-			log.info("element Search is not seen another 10 sec");
-		}
-		TestUtil.ActionForMovetoElement(Search);
-		try
-		{
-			Thread.sleep(2000);
-		} 
-		catch (InterruptedException e) 
-		{
-			log.info("InterruptedException is seen");
-		}
-		Search.sendKeys(input);
-		
-		size = usernames.size();
-			
-		}
-		;
-		return size;
-
 	}
 
-	public boolean HomepageTitle()
-	{
-		boolean flag = true;
-		try
-		{
-			TestUtil.VisibleOn(driver, UserDisplayName, 30);
-		}
-		catch(TimeoutException e)
-		{
-			log.info(e.getStackTrace());
-		}
-		if (UserName.getText() == "parag borawake ‎(bparag)‎") 
-		{
-			return flag;
-		} else {
-			return flag = false;
-		}
-
-	}
-	
-	
 	public String SearchAndClickTheUser()
 	{
 		GiveSearchInput(reader.getCellData("HomePage", "name", 2)); 
@@ -139,70 +96,44 @@ public class HomePage extends TestBase
 		
 	}
 
-	public void SearchTheResult() 
-	{
+	public void SearchTheResult() {
 
-		try 
-		{
+		try {
 			TestUtil.VisibleOn(driver, Search, 30);
-		} 
-		catch (TimeoutException e) 
-		{
+		} catch (TimeoutException e) {
 			log.info("Element- Search is not seen with in 30 sec");
-		}
-		if (HomepageTitle() == false)
-		{
-			try 
-			{
-				TestUtil.VisibleOn(driver, Search, 30);
-			} catch (TimeoutException e) 
-			{
-				log.info("Element- Search is not seen with in 10 sec");
-			}
-			TestUtil.ActionForMovetoElement(Search).click();
-			TestUtil.ActionForMovetoElement(Search).sendKeys(reader.getCellData(" Sarch", "SearchInput", 2));
-			log.info("search input added");
-
-		}
-		
-		
+		}		
+		TestUtil.ActionForMovetoElement(Search).click();
+		TestUtil.ActionForMovetoElement(Search).sendKeys(reader.getCellData(" Sarch", "SearchInput", 2));
+		log.info("search input added");
 
 	}
-	
-	public ScoreBoardPage ClickONScoreBoadrd()
-	{
-		
-		try 
-		{
+
+	public ScoreBoardPage ClickONScoreBoadrd() {
+
+		try {
 			Thread.sleep(2000);
-		} catch (InterruptedException e) 
-		{
+		} catch (InterruptedException e) {
 			log.info("InterruptedException is seen");
 		}
 		TestUtil.ActionForMovetoElement(Scoreboard).click().build().perform();
-	
-		return new  ScoreBoardPage();
-				
+
+		return new ScoreBoardPage();
+
 	}
-	public String ScoreBoardPageTile()
-	{
-		try 
-		{
+
+	public String ScoreBoardPageTile() {
+		try {
 			Thread.sleep(2000);
-		}
-		catch (InterruptedException e) 
-		{
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		TestUtil.ActionForMovetoElement(TalentFlag);
-		msg= TalentFlag.getText();
-		
-		
-		return msg ;
-		
+		msg = TalentFlag.getText();
+
+		return msg;
+
 	}
-	
-	
 
 }

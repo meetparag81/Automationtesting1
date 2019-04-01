@@ -45,7 +45,7 @@ public class ScoreBoardPage extends TestBase
 		
 	}
 	
-	public String SaveAllOptions(WebElement RiskOfLossoptions,WebElement ImPactOFLossoptions, WebElement ReasonOfLeavingoptions )
+	public String SaveAllOptions(WebElement riskOfLossoptions,WebElement ImPactOFLossoptions, WebElement ReasonOfLeavingoptions )
 	{
 		
 		int sum = 3;
@@ -53,7 +53,15 @@ public class ScoreBoardPage extends TestBase
 		{
 			for(int i =0;i<=4;i++)
 			{
-				String names = RiskOfLossoptions();
+				try
+				{
+				TestUtil.VisibleOn(driver, RisofLoss, 20);
+				}
+				catch(TimeoutException e)
+				{
+					log.info("Element- RisofLoss is not seen with in 30 sec");
+				}
+				TestUtil.ActionForMovetoElement(riskOfLossoptions).click().build().perform();
 				
 				try
 				{
@@ -63,21 +71,16 @@ public class ScoreBoardPage extends TestBase
 				{
 					log.info("Element- RisofLoss is not seen with in 30 sec");
 				}
+				
+				
+				String names=RiskOfLossoptionsElement();
 				switch(names)
 				{
 				case"Low":
-					TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
+					TestUtil.ActionForMovetoElement(riskOfLossoptions).click().build().perform();
 					break;
 				case"Medium":
-					try
-					{
-					TestUtil.VisibleOn(driver, RisofLoss, 20);
-					}
-					catch(TimeoutException e)
-					{
-						log.info("Element- RisofLoss is not seen with in 30 sec");
-					}
-					TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
+					
 					break;
 					}
 				
@@ -95,7 +98,7 @@ public class ScoreBoardPage extends TestBase
 		
 		
 		
-		TestUtil.ActionForMovetoElement(RiskOfLossoptions).click().build().perform();
+		TestUtil.ActionForMovetoElement(riskOfLossoptions).click().build().perform();
 		TestUtil.ActionForMovetoElement(element);
 		return msg;
 		
@@ -122,7 +125,7 @@ public class ScoreBoardPage extends TestBase
 		
 	}
 	
-	public WebElement RiskOfLossoptionsElement()
+	public String RiskOfLossoptionsElement()
 	{
 		for(int i =0;i<=4;i++)
 		{
@@ -138,7 +141,7 @@ public class ScoreBoardPage extends TestBase
 			}
 		
 		}
-		return element;
+		return element.getText();
 		
 	}
 	
