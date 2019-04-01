@@ -19,7 +19,8 @@ import Com_Automationtesting1_TestUtil.TestUtil;
 import com_Automationtesting1_Helper.ResourceHelper;
 import com_Automationtesting1_Logger.LoggerHelper;
 
-public class TestBase {
+public class TestBase 
+{
 	public static WebDriver driver;
 	public static Properties prop;
 	public static WebDriverEventListener e_driver;
@@ -27,6 +28,7 @@ public class TestBase {
 	
 	public TestBase()
 	{
+		System.out.println();
 		
 		prop = new Properties();
 		FileInputStream ip;
