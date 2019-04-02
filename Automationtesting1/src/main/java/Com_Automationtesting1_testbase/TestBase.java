@@ -25,6 +25,7 @@ public class TestBase
 	public static Properties prop;
 	public static WebDriverEventListener e_driver;
 	private static Logger log = LoggerHelper.getLogger(TestBase.class);
+	private static String msg;
 	
 	public TestBase()
 	{
@@ -55,7 +56,7 @@ public class TestBase
 		
 	}
 	
-	public static void initalization()
+	public static String initalization()
 	{
 		String browsername = prop.getProperty("browser");
 		if(browsername.equals("firefox"))
@@ -97,25 +98,32 @@ public class TestBase
 		log.info("url is entered");
 		if(!driver.getTitle().equals("SuccessFactors"))
 		{
-			driver.get("https://performancemanager8.successfactors.com/login?company=BPOCUSTOM10");
+			driver.navigate().refresh();
+			return msg = "true";
 		}
 		}
 		catch(Exception e)
 		{
 			log.info("url is not entered");
-			if(!driver.getTitle().equals(""))
-			{
-				driver.get("https://performancemanager8.successfactors.com");
-				driver.findElement(By.id("__input0-inner")).sendKeys("BPOCUSTOM10");
-				driver.findElement(By.id("__button0-img")).click();
+			return msg = "false";
+			
+			
 				
 			}
+		if(msg.equals("false"))
+		{
+			driver.get("https://performancemanager8.successfactors.com");
+			driver.findElement(By.id("__input0-inner")).sendKeys("BPOCUSTOM10");
+			driver.findElement(By.id("__button0-img")).click();
+		
 			
 			
 		}
+		return msg= driver.getTitle();
 		
 	}
+}
 	
 	
 
-}
+

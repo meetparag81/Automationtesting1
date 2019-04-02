@@ -927,3 +927,59 @@
 2019-04-01 22:04:950 INFO  TestBase:103 - url is not entered
 2019-04-01 22:04:960 INFO  TestBase:36 - property file initalized
 2019-04-01 22:04:54 INFO  TestBase:35 - Loginpage object created
+2019-04-02 21:04:456 INFO  TestBase:38 - property file initalized
+2019-04-02 21:04:508 INFO  TestBase:71 - chrome browser launched
+2019-04-02 21:04:614 INFO  TestBase:84 - maximized the browser
+2019-04-02 21:04:445 INFO  TestBase:105 - url is not entered
+2019-04-02 21:04:80 INFO  TestBase:38 - property file initalized
+2019-04-02 21:04:894 INFO  TestBase:71 - chrome browser launched
+2019-04-02 21:04:383 INFO  TestBase:84 - maximized the browser
+2019-04-02 21:04:958 INFO  TestBase:105 - url is not entered
+2019-04-02 22:04:781 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:74 INFO  TestBase:71 - chrome browser launched
+2019-04-02 22:04:301 INFO  TestBase:84 - maximized the browser
+2019-04-02 22:04:984 INFO  TestBase:97 - url is entered
+2019-04-02 22:04:30 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:447 INFO  TestBase:35 - Loginpage object created
+2019-04-02 22:04:247 INFO  LoginPage:70 - timeoutexceptionseen
+2019-04-02 22:04:423 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:359 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:676 INFO  TestBase:71 - chrome browser launched
+2019-04-02 22:04:835 INFO  TestBase:84 - maximized the browser
+2019-04-02 22:04:114 INFO  TestBase:97 - url is entered
+2019-04-02 22:04:190 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:323 INFO  TestBase:35 - Loginpage object created
+2019-04-02 22:04:851 INFO  LoginPage:70 - timeoutexceptionseen
+2019-04-02 22:04:862 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:575 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:04 INFO  TestBase:71 - chrome browser launched
+2019-04-02 22:04:159 INFO  TestBase:84 - maximized the browser
+2019-04-02 22:04:607 INFO  TestBase:105 - url is not entered
+2019-04-02 22:04:357 INFO  TestBase:38 - property file initalized
+2019-04-02 22:04:679 INFO  TestBase:71 - chrome browser launched
+2019-04-02 22:04:817 INFO  TestBase:84 - maximized the browser
+2019-04-02 22:04:586 INFO  TestBase:105 - url is not entered
+2019-04-02 22:04:687 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:627 INFO  TestBase:72 - chrome browser launched
+2019-04-02 22:04:949 INFO  TestBase:85 - maximized the browser
+2019-04-02 22:04:994 INFO  TestBase:98 - url is entered
+2019-04-02 22:04:660 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:274 INFO  TestBase:72 - chrome browser launched
+2019-04-02 22:04:438 INFO  TestBase:85 - maximized the browser
+2019-04-02 22:04:535 INFO  TestBase:107 - url is not entered
+2019-04-02 22:04:539 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:645 INFO  TestBase:35 - Loginpage object created
+2019-04-02 22:04:887 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:923 INFO  TestBase:72 - chrome browser launched
+2019-04-02 22:04:638 INFO  TestBase:85 - maximized the browser
+2019-04-02 22:04:685 INFO  TestBase:107 - url is not entered
+2019-04-02 22:04:688 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:785 INFO  TestBase:35 - Loginpage object created
+2019-04-02 22:04:473 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:881 INFO  TestBase:72 - chrome browser launched
+2019-04-02 22:04:640 INFO  TestBase:85 - maximized the browser
+2019-04-02 22:04:705 INFO  TestBase:107 - url is not entered
+2019-04-02 22:04:305 INFO  TestBase:39 - property file initalized
+2019-04-02 22:04:554 INFO  TestBase:72 - chrome browser launched
+2019-04-02 22:04:733 INFO  TestBase:85 - maximized the browser
+2019-04-02 22:04:861 INFO  TestBase:107 - url is not entered

@@ -30,11 +30,25 @@ public class ScoreBoardPageTest extends TestBase
 	@BeforeMethod
 	public void Setup()
 	{
-		TestBase.initalization();
+		String msg = TestBase.initalization();
+		if(!msg.equals("SucessFactors"))
+		 {
+			 driver.navigate().refresh();
+		 }
 		LoginPage = new LoginPage();
 		log.info("Loginpage object created");
 		LoginPage.EnterwithValidcredentials(reader.getCellData("HomePage", "UserName", 2), reader.getCellData("HomePage", "Password", 2));
 		 HomePage= LoginPage.ClickOnLogin();
+		 if(!driver.getTitle().equals("Home"))
+		 {
+			 driver.navigate().refresh();
+		 }
+		 try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) 
+		 {
+			log.info(e.getStackTrace());
+		}
 		 HomePage.GiveSearchInput(reader.getCellData("HomePage", "name", 2));
 		 SBPage = HomePage.ClickONScoreBoadrd();
 	
