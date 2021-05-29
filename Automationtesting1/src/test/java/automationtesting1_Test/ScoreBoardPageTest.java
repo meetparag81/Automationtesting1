@@ -50,7 +50,7 @@ public class ScoreBoardPageTest extends TestBase
 	@Test(priority=2)
 	public void SelectDiffrentTalentOptionTest()
 	{
-		SBPage.SelectDiffrentOptions();
+		SBPage.GetDiffrentOptions();
 		
 	}
 	
